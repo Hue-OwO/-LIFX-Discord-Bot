@@ -43,15 +43,8 @@ client.once('ready', () => {
                         body: commands
                     },
                 );
-                console.log('Successfully registered application commands globally');
-            } /*else {
-                await rest.put(
-                    Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
-                        body: commands
-                    },
-                );
-                console.log('Successfully registered application commands for development guild');
-            }*/
+                console.log('Successfully registered commands');
+            } 
          catch (error) {
             if (error) console.error(error);
         }
@@ -63,7 +56,6 @@ client.on('interactionCreate', async interaction => {
     const command = client.commands.get(interaction.commandName);
     if (!command) return;
 	await interaction.deferReply();
-	//interaction.reply({type: 3, content: ' ' });
     try {
         await command.execute(interaction);
     } catch (error) {
