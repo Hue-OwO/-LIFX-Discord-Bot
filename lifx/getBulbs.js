@@ -11,11 +11,13 @@ async function getBulbs() {
     })
     .then(response => {
         const bulbs = []
+	
       console.log(response);
 	 response.forEach((bulb) => {
-  	   bulbs.push(bulb.label);
-	});
-	 return(`${bulbs}`)
+  	  // bulbs.push(bulb.label);
+	     return bulb.label
+	 });
+	 //return(`${bulbs}`)
 
     })
     .catch(error => {
