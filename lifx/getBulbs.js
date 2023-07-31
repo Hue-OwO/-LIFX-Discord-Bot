@@ -14,10 +14,9 @@ async function getBulbs() {
 	
       console.log(response);
 	 response.forEach((bulb) => {
-  	  // bulbs.push(bulb.label);
-	     return bulb.label
+  	 bulbs.push(bulb.label + bulb.power);
 	 });
-	 //return(`${bulbs}`)
+	 return(`${bulbs}`)
 
     })
     .catch(error => {
