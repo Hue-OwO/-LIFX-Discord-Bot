@@ -10,8 +10,13 @@ async function getBulbs() {
       return res.json();
     })
     .then(response => {
+        const bulbs = []
       console.log(response);
-	 return response;   
+	 response.forEach((bulb) => {
+  	   bulbs.push(bulb.label);
+	});
+	 return(`${bulbs}`)
+
     })
     .catch(error => {
       console.log(error);
